@@ -495,44 +495,44 @@ public void submitData(View view) {
 
 III. Cài đặt app:<br>
 1. App1:<br>
-ĐẶT VẤN ĐỀ & PHƯƠNG PHÁP GIẢI QUYẾTVấn đề: Ban cán sự lớp cần một ứng dụng offline quản lý danh sách sinh viên lớp 58KTP để điểm danh hoặc tra cứu nhanh số điện thoại khi mất mạng.
-Tuy nhiên, dữ liệu thô ban đầu được lưu lộn xộn, không theo thứ tự bảng chữ cái (Alphabet) của Tên sinh viên, gây khó khăn cho việc tra cứu thủ công.
-Giải pháp xử lý & Thuật toán:Lưu trữ: Chuẩn bị trước file students.json lưu trong thư mục assets.
-Thuật toán tiền xử lý: Sử dụng Thuật toán sắp xếp nổi bọt (Bubble Sort) hoặc Collections.sort() dựa trên một Comparator tùy biến để tự động bóc tách Chữ cái đầu tiên của Tên (Không tính Họ và Tên đệm) để sắp xếp lại danh sách theo thứ tự từ A --> Z ngay khi nạp ứng dụng.
-Đối tượng hiển thị: Sử dụng ListView kết hợp với SimpleAdapter để hiển thị dữ liệu dạng hai dòng (Tên sinh viên làm tiêu đề chính, Mã sinh viên & SĐT làm tiêu đề phụ) một cách tối giản, trực quan.
+ĐẶT VẤN ĐỀ & PHƯƠNG PHÁP GIẢI QUYẾTVấn đề: Ban cán sự lớp cần một ứng dụng offline quản lý danh sách sinh viên lớp 58KTP để điểm danh hoặc tra cứu nhanh số điện thoại khi mất mạng.<br>
+Tuy nhiên, dữ liệu thô ban đầu được lưu lộn xộn, không theo thứ tự bảng chữ cái (Alphabet) của Tên sinh viên, gây khó khăn cho việc tra cứu thủ công.<br>
+Giải pháp xử lý & Thuật toán:Lưu trữ: Chuẩn bị trước file students.json lưu trong thư mục assets.<br>
+Thuật toán tiền xử lý: Sử dụng Thuật toán sắp xếp nổi bọt (Bubble Sort) hoặc Collections.sort() dựa trên một Comparator tùy biến để tự động bóc tách Chữ cái đầu tiên của Tên (Không tính Họ và Tên đệm) để sắp xếp lại danh sách theo thứ tự từ A --> Z ngay khi nạp ứng dụng.<br>
+Đối tượng hiển thị: Sử dụng ListView kết hợp với SimpleAdapter để hiển thị dữ liệu dạng hai dòng (Tên sinh viên làm tiêu đề chính, Mã sinh viên & SĐT làm tiêu đề phụ) một cách tối giản, trực quan.<br>
 
-Triển Khai các bước trên android studio:
-Bước 1: Khởi tạo cấu trúc thư mục và file dữ liệu Assets
-<img width="989" height="664" alt="image" src="https://github.com/user-attachments/assets/cf649434-bff4-415f-878d-6317aabf0482" />
-Bước 2: Thiết kế giao diện chính (activity_main.xml)
-<img width="934" height="703" alt="image" src="https://github.com/user-attachments/assets/528ea89c-faa1-45f0-bd99-7d4da05201bd" />
-Bước 3: Tạo khuôn mẫu đối tượng dữ liệu (Student.java)
+Triển Khai các bước trên android studio:<br>
+Bước 1: Khởi tạo cấu trúc thư mục và file dữ liệu Assets<br>
+<img width="989" height="664" alt="image" src="https://github.com/user-attachments/assets/cf649434-bff4-415f-878d-6317aabf0482" /><br>
+Bước 2: Thiết kế giao diện chính (activity_main.xml)<br>
+<img width="934" height="703" alt="image" src="https://github.com/user-attachments/assets/528ea89c-faa1-45f0-bd99-7d4da05201bd" /><br>
+Bước 3: Tạo khuôn mẫu đối tượng dữ liệu (Student.java)<br>
 
-<img width="1161" height="740" alt="image" src="https://github.com/user-attachments/assets/1fe63894-39f6-438e-9462-10723392a61f" />
-Bước 4: Viết logic đọc, xử lý thuật toán tại MainActivity.java
+<img width="1161" height="740" alt="image" src="https://github.com/user-attachments/assets/1fe63894-39f6-438e-9462-10723392a61f" /><br>
+Bước 4: Viết logic đọc, xử lý thuật toán tại MainActivity.java<br>
 
-<img width="854" height="899" alt="image" src="https://github.com/user-attachments/assets/7834aa6a-3bde-4b96-bf15-3404d58e58f6" />
+<img width="854" height="899" alt="image" src="https://github.com/user-attachments/assets/7834aa6a-3bde-4b96-bf15-3404d58e58f6" /><br>
 
-Bước 5: Cài đặt và kiểm thử( tắt internet):
+Bước 5: Cài đặt và kiểm thử( tắt internet):<br>
 
-<img width="552" height="978" alt="image" src="https://github.com/user-attachments/assets/ec0e115a-6d95-4eba-a880-a6b99f9fd4a2" />
+<img width="552" height="978" alt="image" src="https://github.com/user-attachments/assets/ec0e115a-6d95-4eba-a880-a6b99f9fd4a2" /><br>
 
-1. ĐẶC THÙ CỦA DỮ LIỆU (Mô tả dữ liệu)
-Định dạng lưu trữ: Dữ liệu thuộc loại dữ liệu có cấu trúc (Structured Data), được chuẩn hóa theo định dạng cặp Key - Value của tệp tin students.json lưu cục bộ trong thư mục assets.
+1. ĐẶC THÙ CỦA DỮ LIỆU (Mô tả dữ liệu)<br>
+Định dạng lưu trữ: Dữ liệu thuộc loại dữ liệu có cấu trúc (Structured Data), được chuẩn hóa theo định dạng cặp Key - Value của tệp tin students.json lưu cục bộ trong thư mục assets.<br>
 
-Bảng mã hiển thị: Sử dụng cấu trúc mã hóa ký tự UTF-8, đảm bảo toàn bộ họ tên tiếng Việt có dấu của 71 sinh viên không bị lỗi font khi hệ thống bóc tách luồng dữ liệu thô.
+Bảng mã hiển thị: Sử dụng cấu trúc mã hóa ký tự UTF-8, đảm bảo toàn bộ họ tên tiếng Việt có dấu của 71 sinh viên không bị lỗi font khi hệ thống bóc tách luồng dữ liệu thô.<br>
 
-Tính chất hỗn hợp: Dữ liệu chứa cả các trường định danh cố định (Mã sinh viên - msv, Họ tên - name, Số điện thoại - phone) kết hợp với dữ liệu số nguyên biến động tích hợp sẵn là số lần tương tác (visits).
+Tính chất hỗn hợp: Dữ liệu chứa cả các trường định danh cố định (Mã sinh viên - msv, Họ tên - name, Số điện thoại - phone) kết hợp với dữ liệu số nguyên biến động tích hợp sẵn là số lần tương tác (visits).<br>
 
-Sự lộn xộn ban đầu: Thứ tự các dòng sinh viên trong tệp tĩnh được sắp xếp ngẫu nhiên theo mã sinh viên, hoàn toàn không tuân theo quy tắc sắp xếp danh sách lớp truyền thống của Việt Nam.
-2. THUẬT TOÁN TIỀN XỬ LÝ DỮ LIỆU
-Ứng dụng triển khai kết hợp hai giải pháp thuật toán để tối ưu hóa dữ liệu trước khi render lên màn hình giao diện:
-Thuật toán Tách chuỗi (String Tokenization / Substring):
-Nguyên lý: Sử dụng hàm toán thuật tự chế getFirstNameOnly() dựa vào vị trí khoảng trắng cuối cùng (lastIndexOf(" ")) để cắt bỏ hoàn toàn phần Họ và Tên đệm.
-Mục đích: Trích xuất ra duy nhất Tên chính của sinh viên (Ví dụ: "Lê Tuấn Anh" ---> "Anh").
-Thuật toán Sắp xếp (Sorting Algorithm):
-Nguyên lý: Sử dụng phương thức Collections.sort() áp dụng cấu trúc TimSort (kết hợp giữa Merge Sort và Insertion Sort) với một bộ so sánh Comparator tùy biến không phân biệt chữ hoa chữ thường (compareToIgnoreCase).
-Mục đích: Ép danh sách mảng (ArrayList) tự động đảo vị trí các đối tượng sinh viên dựa trên Tên chính đã tách, đưa toàn bộ danh sách lớp về chuẩn Alphabet từ A --> Z một cách logic (Sinh viên tên "Anh" luôn đứng đầu, sinh viên tên "Việt" tự động xuống cuối).
+Sự lộn xộn ban đầu: Thứ tự các dòng sinh viên trong tệp tĩnh được sắp xếp ngẫu nhiên theo mã sinh viên, hoàn toàn không tuân theo quy tắc sắp xếp danh sách lớp truyền thống của Việt Nam.<br>
+2. THUẬT TOÁN TIỀN XỬ LÝ DỮ LIỆU<br>
+Ứng dụng triển khai kết hợp hai giải pháp thuật toán để tối ưu hóa dữ liệu trước khi render lên màn hình giao diện:<br>
+Thuật toán Tách chuỗi (String Tokenization / Substring):<br>
+Nguyên lý: Sử dụng hàm toán thuật tự chế getFirstNameOnly() dựa vào vị trí khoảng trắng cuối cùng (lastIndexOf(" ")) để cắt bỏ hoàn toàn phần Họ và Tên đệm.<br>
+Mục đích: Trích xuất ra duy nhất Tên chính của sinh viên (Ví dụ: "Lê Tuấn Anh" ---> "Anh").<br>
+Thuật toán Sắp xếp (Sorting Algorithm):<br>
+Nguyên lý: Sử dụng phương thức Collections.sort() áp dụng cấu trúc TimSort (kết hợp giữa Merge Sort và Insertion Sort) với một bộ so sánh Comparator tùy biến không phân biệt chữ hoa chữ thường (compareToIgnoreCase).<br>
+Mục đích: Ép danh sách mảng (ArrayList) tự động đảo vị trí các đối tượng sinh viên dựa trên Tên chính đã tách, đưa toàn bộ danh sách lớp về chuẩn Alphabet từ A --> Z một cách logic (Sinh viên tên "Anh" luôn đứng đầu, sinh viên tên "Việt" tự động xuống cuối).<br>
 
 
 3. App2:<br>
